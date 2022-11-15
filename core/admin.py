@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Testimony, Contact
+from .models import Testimony, Contact, Email
 
 # Register your models here.
 
@@ -19,3 +19,10 @@ class ContactAdmin(admin.ModelAdmin):
     list_filter = ['name', 'email']
     
 admin.site.register(Contact, ContactAdmin)
+
+class EmailAdmin(admin.ModelAdmin):
+    list_display = [ 'email']
+    search_fields = [ 'email']
+    list_filter = ['email']
+    
+admin.site.register(Email, EmailAdmin)
